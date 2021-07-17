@@ -20,8 +20,33 @@ jobs:
       - run:
           name: Run tests
           command: npm test
+  deploy:
+    # Ref: https://circleci.com/blog/deploying-documentation-to-github-pages-with-continuous-integration/
+    executor: node/default
+    steps:
+      - checkout
+      - run:
+          name: Install gh-pages
+          command: npm install --silent gh-pages
+      - run:
+          name: Setup Git configuration
+          command: |
+            git config user.email "kelvintaywl@gmail.com"
+            git config user.name "CI Build"
+      - add_ssh_keys:
+          fingerprints:
+            - "0d:ce:d5:61:3f:0a:48:52:cb:22:95:72:dc:d2:94:40"
+      - run:
+          name: Publish to gh-pages branch
+          command: npx gh-pages --dotfiles --message "[skip ci] Publish" --dist app
 
 workflows:
   standard: 
     jobs:
       - test
+      - deploy:
+          requires:
+            - test
+          filters:
+            branches:
+              only: master
