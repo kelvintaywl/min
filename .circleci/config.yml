@@ -43,7 +43,10 @@ jobs:
 workflows:
   standard: 
     jobs:
-      - test
+      - test:
+          filters:
+            branches:
+              ignore: gh-pages
       - deploy:
           requires:
             - test
