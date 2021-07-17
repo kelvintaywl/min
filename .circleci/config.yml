@@ -1,0 +1,27 @@
+version: 2.1
+
+orbs:
+  node: circleci/node@4.5.1
+
+jobs:
+  test:  
+    docker:
+      - image: 'cimg/node:14.17.3-browsers'
+    steps:
+      - checkout
+      - node/install-packages
+      - run:
+          name: Lint
+          command: npm run lint
+      - run:
+          name: Run server (background)
+          command: npm run serve
+          background: true
+      - run:
+          name: Run tests
+          command: npm test
+
+workflows:
+  standard: 
+    jobs:
+      - test
