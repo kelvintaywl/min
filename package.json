@@ -1,0 +1,37 @@
+{
+  "name": "min",
+  "version": "0.0.1",
+  "description": "Minimal SPA with Hyperapp. This is a throwaway project for fun and non-profit.",
+  "scripts": {
+    "serve": "serve app",
+    "test": "jest",
+    "lint": "prettier --check .",
+    "lint:w": "prettier --write ."
+  },
+  "jest": {
+    "preset": "jest-puppeteer"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kelvintaywl/min.git"
+  },
+  "keywords": [
+    "hyperapp",
+    "node",
+    "circleci",
+    "github pages"
+  ],
+  "author": "kelvintaywl@gmail.com",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/kelvintaywl/min/issues"
+  },
+  "homepage": "https://github.com/kelvintaywl/min#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "jest": "^27.0.6",
+    "jest-puppeteer": "^5.0.4",
+    "prettier": "^2.3.2",
+    "serve": "^12.0.0"
+  }
+}
