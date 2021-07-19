@@ -1,7 +1,7 @@
 {
   "name": "min",
-  "version": "0.0.1",
-  "description": "Minimal SPA with Hyperapp. This is a throwaway project for fun and non-profit.",
+  "version": "1.0.0",
+  "description": "Minimal SPA. This is a throwaway project for fun and non-profit.",
   "scripts": {
     "serve": "serve app",
     "test": "jest",
@@ -16,7 +16,6 @@
     "url": "git+https://github.com/kelvintaywl/min.git"
   },
   "keywords": [
-    "hyperapp",
     "node",
     "circleci",
     "github pages"
