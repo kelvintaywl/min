@@ -8,7 +8,7 @@ describe("index page", () => {
 
   it('should be titled "MIN"', async () => {
     const title = await page.title();
-    expect(title).toEqual("MIN");
+    expect(title).toEqual("MIN!");
   });
 
   it("should have a button with label", async () => {
